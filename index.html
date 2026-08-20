@@ -3,14 +3,13 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#F8F9FA" />
-  <title>Arsip Nusa Guest House — Nyaman, Hangat, Bersih</title>
-  <meta name="description" content="Arsip Nusa Guest House — Ruang singgah modern yang nyaman, bersih, dan strategis." />
+  <meta name="theme-color" content="#F9F6F0" />
+  <title>Arsip Nusa Guest House — Ruang Singgah Terasa Rumah</title>
   
-  <!-- Fonts: Plus Jakarta Sans & Inter untuk kesan Modern, Clean, Friendly -->
+  <!-- Fonts: Fraunces (Characterful/Homey Serif) & Nunito (Friendly Sans) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
   
   <!-- Remix Icon -->
   <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
@@ -20,324 +19,356 @@
 
   <style>
     :root {
-      /* Palette Modern Guest House / Coliving */
-      --primary: #1A5F53; /* Deep Teal / Hijau asri */
-      --primary-hover: #13483E;
-      --accent: #E8B831; 
+      /* Palette Homey & Artsy Guest House */
+      --primary: #D47A5A; /* Terracotta / Batu bata hangat */
+      --primary-hover: #C06748;
+      --secondary: #6B8E78; /* Sage Green */
       
-      --paper: #F8F9FA; /* Off-white segar */
+      --paper: #F9F6F0; /* Warm oat / Krem */
       --surface: #FFFFFF;
-      --ink: #1E293B; /* Slate dark */
-      --muted: #64748B;
-      --line: #E2E8F0;
+      --ink: #433422; /* Dark espresso (bukan hitam murni) */
+      --muted: #8E7D6A;
+      --line: #E8DFD5;
       
-      --glass-bg: rgba(255, 255, 255, 0.9);
-      --soft-bg: #F1F5F9; 
+      --glass-bg: rgba(249, 246, 240, 0.85);
       
-      --shadow-float: 0 12px 32px rgba(26, 95, 83, 0.08);
-      --shadow-card: 0 4px 12px rgba(0, 0, 0, 0.04);
+      --shadow-float: 0 12px 32px rgba(67, 52, 34, 0.08);
+      --shadow-card: 0 8px 24px rgba(212, 122, 90, 0.08);
       
-      --radius: 16px; /* Lebih rounded (friendly) */
-      --radius-sm: 8px;
+      --radius-arch: 140px 140px 20px 20px; /* Lengkungan khas guesthouse estetik */
+      --radius-pill: 50px;
+      --radius-sm: 16px;
       
-      --max: 1200px;
-      --heading: "Plus Jakarta Sans", sans-serif;
-      --sans: "Inter", system-ui, -apple-system, sans-serif;
+      --max: 1100px;
+      --heading: "Fraunces", serif;
+      --sans: "Nunito", sans-serif;
     }
 
-    /* Dark Mode (Modern) */
+    /* Dark Mode (Cozy Night Vibe) */
     html[data-theme="dark"] {
-      --paper: #0F172A; /* Slate 900 */
-      --surface: #1E293B; /* Slate 800 */
-      --ink: #F8FAFC;
-      --muted: #94A3B8;
-      --line: #334155;
-      --glass-bg: rgba(15, 23, 42, 0.9);
-      --soft-bg: #273447;
-      --shadow-float: 0 12px 32px rgba(0, 0, 0, 0.5);
-      --shadow-card: 0 4px 12px rgba(0, 0, 0, 0.2);
-      --theme-color: #0F172A;
+      --paper: #2C2621; /* Dark roast brown */
+      --surface: #3A322C;
+      --ink: #F9F6F0;
+      --muted: #BFAEA0;
+      --line: #4E443C;
+      --glass-bg: rgba(44, 38, 33, 0.85);
+      --shadow-float: 0 12px 32px rgba(0, 0, 0, 0.4);
+      --shadow-card: 0 8px 24px rgba(0, 0, 0, 0.3);
+      --theme-color: #2C2621;
     }
 
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
-    
+
     ::-webkit-scrollbar { width: 8px; height: 8px; }
     ::-webkit-scrollbar-track { background: transparent; }
-    ::-webkit-scrollbar-thumb { background: var(--muted); border-radius: 10px; opacity: 0.5; }
+    ::-webkit-scrollbar-thumb { background: var(--secondary); border-radius: 10px; opacity: 0.5; }
 
     body {
       margin: 0;
       font-family: var(--sans);
-      background: var(--paper);
+      background-color: var(--paper);
+      /* Pola dot tipis khas dinding rumah vintage */
+      background-image: radial-gradient(var(--line) 1px, transparent 1px);
+      background-size: 24px 24px;
       color: var(--ink);
       line-height: 1.6;
-      transition: background .3s ease, color .3s ease;
+      transition: background-color .4s ease, color .4s ease;
       overflow-x: hidden;
       -webkit-font-smoothing: antialiased;
     }
+    
     button, input, select { font: inherit; }
     button { cursor: pointer; }
     img { display:block; width:100%; }
     a { color:inherit; text-decoration:none; }
 
-    .container { 
-      width: min(var(--max), calc(100% - 48px)); 
-      margin: 0 auto; 
-    }
+    .container { width: min(var(--max), calc(100% - 40px)); margin: 0 auto; position: relative; }
     
-    /* Tipografi Friendly */
+    /* Tipografi */
     .eyebrow { 
-      font-family: var(--heading); font-size: 0.8rem; font-weight: 700; color: var(--primary); 
-      background: var(--soft-bg); padding: 6px 14px; border-radius: 20px; 
-      display: inline-block; margin-bottom: 16px; letter-spacing: 0.05em; text-transform: uppercase;
+      font-family: var(--sans); font-size: 0.85rem; font-weight: 700; color: var(--primary); 
+      text-transform: uppercase; letter-spacing: 0.1em; display: inline-flex; align-items: center; gap: 8px; margin-bottom: 16px;
     }
-    h1, h2, h3, h4 { font-family: var(--heading); font-weight: 700; margin: 0; line-height: 1.2; color: var(--ink); letter-spacing: -0.02em; }
+    h1, h2, h3, h4 { font-family: var(--heading); font-weight: 600; margin: 0; line-height: 1.15; color: var(--ink); }
 
-    /* Header Nav (Pill Style) */
-    header {
-      position: fixed; inset: 0 0 auto; z-index: 40;
-      padding: 24px 0; 
-      transition: .3s ease;
+    /* SVG Blobs & Shapes (Character) */
+    .blob-shape {
+      border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%; /* Organik tak beraturan */
     }
-    header.scrolled { padding: 16px 0; background: var(--glass-bg); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--line); }
+    .svg-decor { position: absolute; z-index: -1; opacity: 0.6; }
     
-    .nav { display:flex; align-items:center; justify-content:space-between; gap:20px; }
-    .brand { display:flex; align-items:center; gap:8px; font-weight:800; color: var(--ink); font-family: var(--heading); font-size: 1.4rem; }
-    .brand i { color: var(--primary); font-size: 1.6rem; }
+    /* Header (Floating Pill Nav) */
+    header {
+      position: fixed; inset: 20px 0 auto; z-index: 40; transition: .4s;
+    }
+    .nav-inner {
+      background: var(--glass-bg); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+      border: 1px solid var(--line); border-radius: var(--radius-pill); padding: 12px 24px;
+      display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-float);
+    }
     
-    .nav-links { display:flex; gap:32px; align-items:center; font-size:.95rem; font-weight: 600; }
+    .brand { display:flex; align-items:center; gap:8px; font-weight:700; color: var(--ink); font-family: var(--heading); font-size: 1.3rem; }
+    .brand i { color: var(--primary); font-size: 1.5rem; }
+    
+    .nav-links { display:flex; gap:28px; align-items:center; font-size:.95rem; font-weight: 600; }
     .nav-links a { color: var(--muted); transition: color .2s; }
     .nav-links a:hover { color: var(--primary); }
     
     .nav-actions { display:flex; gap:12px; align-items:center; }
-    
-    .theme-switch { background: var(--soft-bg); border: none; color: var(--ink); width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center; font-size: 1.2rem; transition: .2s; }
-    .theme-switch:hover { background: var(--line); }
+    .theme-switch { background: transparent; border: none; color: var(--muted); font-size: 1.4rem; padding: 0; display: grid; place-items: center; transition: .2s; }
+    .theme-switch:hover { color: var(--primary); transform: rotate(15deg); }
 
     .btn, .icon-btn {
       background: var(--surface); border: 1px solid var(--line); color: var(--ink);
-      border-radius: 50px; min-height: 44px; padding: 0 24px;
+      border-radius: var(--radius-pill); min-height: 48px; padding: 0 28px;
       display: inline-flex; align-items: center; justify-content: center; gap: 8px;
-      font-weight: 600; font-size: 0.95rem; transition: .2s ease;
+      font-weight: 700; font-size: 0.95rem; transition: .3s ease;
     }
-    .icon-btn { width: 44px; padding: 0; font-size: 1.2rem; }
-    .btn:hover, .icon-btn:hover { background: var(--soft-bg); }
+    .icon-btn { width: 48px; padding: 0; font-size: 1.2rem; }
+    .btn:hover, .icon-btn:hover { background: var(--paper); border-color: var(--primary); color: var(--primary); }
     
-    .btn-primary { background: var(--primary); border: none; color: #FFF; box-shadow: 0 4px 12px rgba(26, 95, 83, 0.3); }
-    .btn-primary:hover { background: var(--primary-hover); transform: translateY(-2px); box-shadow: 0 6px 16px rgba(26, 95, 83, 0.4); color: #FFF; }
+    .btn-primary { background: var(--primary); border: none; color: #FFF; }
+    .btn-primary:hover { background: var(--primary-hover); transform: translateY(-3px); box-shadow: 0 8px 20px rgba(212, 122, 90, 0.3); color: #FFF; border: none; }
 
     /* HERO SECTION */
-    .hero-editorial { padding: 160px 0 80px; min-height: 100svh; display: flex; align-items: center; }
-    .hero-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 60px; align-items: center; }
-    .hero-text h1 { font-size: clamp(2.8rem, 5vw, 4.2rem); margin: 0 0 20px; }
-    .hero-text p { font-size: 1.1rem; color: var(--muted); max-width: 90%; margin-bottom: 40px; }
+    .hero { padding: 180px 0 100px; display: flex; align-items: center; position: relative; }
+    .hero-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 40px; align-items: center; }
+    .hero-text h1 { font-size: clamp(3rem, 5vw, 4.5rem); margin: 0 0 24px; position: relative; }
     
-    .hero-image-frame { position: relative; width: 100%; aspect-ratio: 4/5; }
-    .hero-image-frame img { width: 100%; height: 100%; object-fit: cover; border-radius: 24px; box-shadow: var(--shadow-float); }
-
-    /* Booking Bar (Widget Style for Guest House) */
-    .booking-inline {
-      display: flex; flex-wrap: wrap; gap: 16px; align-items: center;
-      background: var(--surface); border: 1px solid var(--line); padding: 16px 24px;
-      border-radius: 24px; box-shadow: var(--shadow-float); margin-top: 20px;
+    /* Dekorasi Bintang/Sparkle buatan tangan dengan SVG */
+    .hero-text h1::after {
+      content: ''; position: absolute; right: -20px; top: -30px; width: 50px; height: 50px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23D47A5A'%3E%3Cpath d='M12 0l2.5 8.5L23 11l-8.5 2.5L12 22l-2.5-8.5L1 11l8.5-2.5z'/%3E%3C/svg%3E");
+      background-size: contain; background-repeat: no-repeat; animation: float 3s ease-in-out infinite;
     }
-    .booking-field { flex: 1; min-width: 140px; border-right: 1px solid var(--line); padding-right: 16px; position: relative; }
-    .booking-field:last-of-type { border-right: none; padding-right: 0; }
-    .booking-field label { display: block; font-size: 0.75rem; font-weight: 700; color: var(--muted); margin-bottom: 6px; text-transform: uppercase; }
-    .booking-input-wrap { display: flex; align-items: center; gap: 10px; color: var(--ink); }
+    
+    .hero-text p { font-size: 1.15rem; color: var(--muted); max-width: 90%; margin-bottom: 40px; font-weight: 600; }
+    
+    .hero-image-wrap { position: relative; display: flex; justify-content: center; }
+    
+    /* Gambar Melengkung (Arch) dengan Background Blob */
+    .hero-blob-bg {
+      position: absolute; inset: -20px -30px -10px 10px; background: var(--secondary); opacity: 0.15;
+      z-index: -1; transform: rotate(-5deg); border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+    }
+    .hero-image {
+      width: 90%; aspect-ratio: 3/4; object-fit: cover;
+      border-radius: var(--radius-arch); /* Melengkung atasnya */
+      box-shadow: var(--shadow-float); border: 8px solid var(--surface);
+    }
+
+    @keyframes float { 0% { transform: translateY(0); } 50% { transform: translateY(-10px) rotate(5deg); } 100% { transform: translateY(0); } }
+
+    /* Booking Bar (Homie Pill Style) */
+    .booking-wrapper {
+      background: var(--surface); border: 2px solid var(--line); padding: 16px 24px;
+      border-radius: var(--radius-pill); box-shadow: var(--shadow-card);
+      display: inline-flex; flex-wrap: wrap; gap: 16px; align-items: center; position: relative; z-index: 10;
+    }
+    .booking-field { padding: 0 16px; position: relative; }
+    .booking-field:not(:last-child)::after {
+      content: ''; position: absolute; right: 0; top: 10%; height: 80%; width: 2px; background: var(--line); border-radius: 2px;
+    }
+    .booking-field label { display: block; font-size: 0.75rem; font-weight: 700; color: var(--muted); text-transform: uppercase; margin-bottom: 4px; }
+    .booking-input-wrap { display: flex; align-items: center; gap: 8px; color: var(--ink); }
     .booking-input-wrap i { font-size: 1.2rem; color: var(--primary); }
-    .booking-field input { width: 100%; border: none; background: transparent; color: var(--ink); font-family: var(--heading); font-size: 1.05rem; font-weight: 600; outline: none; cursor: pointer; }
+    .booking-field input { width: 110px; border: none; background: transparent; color: var(--ink); font-family: var(--sans); font-size: 1.05rem; font-weight: 700; outline: none; cursor: pointer; }
     
     /* Custom Dropdown */
-    .custom-select { position: relative; width: 100%; cursor: pointer; }
-    .select-trigger { display: flex; align-items: center; justify-content: space-between; font-family: var(--heading); font-size: 1.05rem; font-weight: 600; }
+    .custom-select { position: relative; width: 140px; cursor: pointer; }
+    .select-trigger { display: flex; align-items: center; justify-content: space-between; font-family: var(--sans); font-size: 1.05rem; font-weight: 700; }
     .select-options { 
-      position: absolute; top: calc(100% + 16px); left: -16px; min-width: 200px;
-      background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); 
-      box-shadow: var(--shadow-float); z-index: 100; opacity: 0; pointer-events: none; 
-      transform: translateY(-10px); transition: .2s; overflow: hidden;
+      position: absolute; top: calc(100% + 16px); left: -20px; min-width: 200px;
+      background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-sm); 
+      box-shadow: var(--shadow-float); z-index: 100; opacity: 0; pointer-events: none; transform: translateY(-10px); transition: .2s; overflow: hidden;
     }
     .custom-select.open .select-options { opacity: 1; pointer-events: auto; transform: translateY(0); }
-    .select-options div { padding: 12px 20px; font-size: .95rem; font-weight: 500; color: var(--ink); transition: .2s; }
-    .select-options div:hover { background: var(--soft-bg); }
-    .select-options div.selected { background: var(--soft-bg); color: var(--primary); font-weight: 700; }
+    .select-options div { padding: 12px 20px; font-size: .95rem; font-weight: 600; color: var(--ink); transition: .2s; }
+    .select-options div:hover { background: var(--paper); color: var(--primary); }
+    .select-options div.selected { background: var(--primary); color: #FFF; }
+
+    /* SVG Wave Divider */
+    .wave-divider { width: 100%; height: auto; display: block; fill: var(--surface); margin-bottom: -1px; }
+    .bg-surface { background-color: var(--surface); padding: 80px 0; }
 
     section { padding: 100px 0; }
-    .section-head { margin-bottom: 56px; text-align: center; }
-    .section-head h2 { font-size: clamp(2rem, 4vw, 3rem); margin-top: 12px; }
-
-    /* Story Section - Guest House Vibe */
-    .story-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
-    .story-quote {
-      font-family: var(--heading); font-size: clamp(1.6rem, 2.5vw, 2.2rem); font-weight: 600;
-      color: var(--ink); border-left: 6px solid var(--primary); padding-left: 24px;
+    .section-head { margin-bottom: 56px; text-align: center; display: flex; flex-direction: column; align-items: center; }
+    .section-head h2 { font-size: clamp(2.2rem, 4vw, 3.2rem); position: relative; display: inline-block; }
+    
+    /* Garis bawah tulisan melengkung (squiggle) */
+    .squiggle-underline {
+      position: absolute; bottom: -10px; left: 0; width: 100%; height: 12px; z-index: -1;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 20' preserveAspectRatio='none'%3E%3Cpath d='M0,10 Q25,20 50,10 T100,10' fill='none' stroke='%23D47A5A' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E");
     }
-    .story-content p { font-size: 1.05rem; color: var(--muted); margin-bottom: 24px; }
-    .story-images { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 32px; }
-    .story-images img { aspect-ratio: 4/3; object-fit: cover; border-radius: var(--radius); box-shadow: var(--shadow-card); }
-    .story-images img:nth-child(2) { transform: translateY(24px); } 
 
-    /* Spaces - Card Style */
-    .space-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-    .space-item { 
-      background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); 
-      padding: 16px; transition: .3s; display: flex; flex-direction: column; cursor: pointer;
+    /* Story Section */
+    .story-layout { display: grid; grid-template-columns: 1fr 1.2fr; gap: 60px; align-items: center; }
+    .story-content h3 { font-size: 2.4rem; margin-bottom: 24px; }
+    .story-content p { font-size: 1.1rem; color: var(--muted); margin-bottom: 20px; font-weight: 600; }
+    
+    /* Galeri Asimetris di Cerita */
+    .polaroid-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; position: relative; }
+    .polaroid { 
+      background: var(--surface); padding: 12px 12px 32px 12px; border-radius: 4px; 
+      box-shadow: 0 10px 20px rgba(0,0,0,0.08); border: 1px solid var(--line);
     }
-    .space-item:hover { box-shadow: var(--shadow-float); transform: translateY(-4px); border-color: transparent; }
-    .space-img-wrap { overflow: hidden; border-radius: var(--radius-sm); margin-bottom: 20px; aspect-ratio: 4/3; }
-    .space-img-wrap img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s ease; }
-    .space-item:hover .space-img-wrap img { transform: scale(1.05); }
-    .space-item h3 { font-size: 1.4rem; margin-bottom: 6px; }
-    .space-meta { font-size: 0.85rem; font-weight: 600; color: var(--primary); margin-bottom: 12px; display: flex; gap: 12px; }
-    .space-item p { color: var(--muted); font-size: 0.95rem; flex: 1; margin: 0 0 16px; }
-    .read-more { font-size: 0.9rem; font-weight: 700; color: var(--ink); display: inline-flex; align-items: center; gap: 6px; transition: .2s; }
-    .space-item:hover .read-more { color: var(--primary); }
+    .polaroid img { width: 100%; aspect-ratio: 1/1; object-fit: cover; }
+    .polaroid:nth-child(1) { transform: rotate(-4deg) translateY(20px); }
+    .polaroid:nth-child(2) { transform: rotate(3deg); }
 
-    /* Facilities */
-    .facilities-list { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; } 
-    .fac-item { 
-      background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); 
-      padding: 24px; display: flex; gap: 20px; align-items: flex-start; transition: .2s;
+    /* Kamar (Spaces) - Arch Cards */
+    .space-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+    .space-card {
+      background: var(--surface); border: 1px solid var(--line); padding: 12px;
+      border-radius: var(--radius-arch); /* Arch style card */
+      transition: .4s; cursor: pointer; text-align: center;
     }
-    .fac-item:hover { background: var(--soft-bg); }
-    .fac-item i { font-size: 2rem; color: var(--primary); background: var(--paper); padding: 12px; border-radius: 12px; }
-    .fac-item h4 { font-size: 1.25rem; margin-bottom: 8px; }
-    .fac-item p { margin: 0; color: var(--muted); font-size: 0.95rem; }
+    .space-card:hover { box-shadow: var(--shadow-card); transform: translateY(-10px); border-color: var(--primary); }
+    .space-img-wrap { overflow: hidden; border-radius: 128px 128px 16px 16px; margin-bottom: 24px; aspect-ratio: 3/4; }
+    .space-img-wrap img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s ease; }
+    .space-card:hover .space-img-wrap img { transform: scale(1.08); }
+    
+    .space-card h3 { font-size: 1.6rem; margin-bottom: 8px; }
+    .space-meta { font-size: 0.9rem; font-weight: 700; color: var(--secondary); margin-bottom: 12px; }
+    .space-card p { color: var(--muted); font-size: 0.95rem; margin: 0 16px 20px; }
 
-    /* Gallery (Masonry Modern) */
+    /* Fasilitas dengan Blob Icon */
+    .facilities-list { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; } 
+    .fac-item { display: flex; gap: 24px; align-items: flex-start; }
+    .icon-blob {
+      width: 70px; height: 70px; min-width: 70px; background: var(--secondary); color: #FFF;
+      display: grid; place-items: center; font-size: 2rem;
+      border-radius: 40% 60% 60% 40% / 50% 50% 50% 50%; /* Organic Blob */
+      transition: .4s;
+    }
+    .fac-item:hover .icon-blob { border-radius: 50%; transform: rotate(10deg) scale(1.05); background: var(--primary); }
+    .fac-item h4 { font-size: 1.3rem; margin-bottom: 8px; }
+    .fac-item p { margin: 0; color: var(--muted); font-weight: 600; }
+
+    /* Gallery Masonry Homey */
     .gallery-collage { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
-    .gallery-collage img { width: 100%; object-fit: cover; border-radius: var(--radius); transition: .3s; cursor: pointer; }
-    .gallery-collage img:hover { filter: brightness(0.8); }
-    .g1 { grid-column: span 2; grid-row: span 2; aspect-ratio: 1/1; }
-    .g2 { grid-column: span 2; aspect-ratio: 2/1; }
+    .gallery-collage img { width: 100%; object-fit: cover; border-radius: var(--radius-sm); transition: .3s; }
+    .gallery-collage img:hover { transform: scale(1.02); z-index: 2; position: relative; box-shadow: var(--shadow-float); }
+    .g1 { grid-column: span 2; grid-row: span 2; aspect-ratio: 1/1; border-radius: 120px 20px 20px 20px !important; }
+    .g2 { grid-column: span 2; aspect-ratio: 2/1; border-radius: 20px 120px 20px 20px !important; }
     .g3, .g4 { aspect-ratio: 1/1; }
 
-    /* CTA Card Modern */
-    .cta-editorial { 
+    /* CTA Card Artsy */
+    .cta-homie {
       background: var(--primary); color: #FFF; padding: 80px 40px; text-align: center; 
-      border-radius: 24px; margin: 40px 0; position: relative; overflow: hidden;
+      border-radius: 40px; margin: 40px 0; position: relative; overflow: hidden;
     }
-    .cta-editorial::before {
-      content: ''; position: absolute; top: -50px; right: -50px; width: 200px; height: 200px;
-      background: rgba(255,255,255,0.1); border-radius: 50%;
+    .cta-homie::after {
+      content: ''; position: absolute; left: -20px; bottom: -40px; width: 150px; height: 150px;
+      background: var(--secondary); border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%; opacity: 0.3; z-index: 1;
     }
-    .cta-editorial .eyebrow { background: rgba(255,255,255,0.2); color: #FFF; }
-    .cta-editorial h2 { font-size: clamp(2.2rem, 4vw, 3.5rem); margin: 16px auto 24px; color: #FFF; }
-    .cta-editorial p { color: rgba(255,255,255,0.8); font-size: 1.1rem; max-width: 500px; margin: 0 auto 40px; }
-    .cta-editorial .btn { background: #FFF; color: var(--primary); min-height: 52px; padding: 0 32px; font-weight: 700; box-shadow: none; }
-    .cta-editorial .btn:hover { background: var(--soft-bg); transform: translateY(-2px); }
+    .cta-content { position: relative; z-index: 2; }
+    .cta-homie .eyebrow { color: #FFF; background: rgba(0,0,0,0.1); padding: 4px 16px; border-radius: 20px; }
+    .cta-homie h2 { font-size: clamp(2.2rem, 4vw, 3.5rem); margin: 16px auto 24px; color: #FFF; }
+    .cta-homie p { color: rgba(255,255,255,0.9); font-size: 1.1rem; max-width: 500px; margin: 0 auto 40px; font-weight: 600; }
+    .cta-homie .btn { background: var(--paper); color: var(--primary); min-height: 56px; padding: 0 40px; font-size: 1.1rem; border: none; }
 
     /* FOOTER */
-    footer { padding: 80px 0 40px; background: var(--surface); border-top: 1px solid var(--line); }
-    .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1.5fr; gap: 40px; margin-bottom: 60px; } 
-    footer h5 { font-size: 0.9rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--ink); margin-bottom: 20px; }
-    footer p, footer a { color: var(--muted); font-size: 0.95rem; line-height: 1.8; transition: .2s; }
-    footer a:hover { color: var(--primary); }
+    footer { background: var(--secondary); color: #FFF; position: relative; padding-top: 20px; margin-top: 100px; }
+    .footer-wave { position: absolute; top: -60px; left: 0; width: 100%; fill: var(--secondary); }
+    .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1.5fr; gap: 40px; padding: 60px 0; } 
+    footer h5 { font-family: var(--sans); font-size: 1rem; font-weight: 700; color: #FFF; margin-bottom: 20px; opacity: 0.9; }
+    footer p, footer a { color: rgba(255,255,255,0.8); font-weight: 600; font-size: 0.95rem; line-height: 1.8; transition: .2s; }
+    footer a:hover { color: var(--primary); opacity: 1; }
+    
+    .map-frame { width: 100%; height: 140px; border-radius: var(--radius-sm); border: 4px solid rgba(255,255,255,0.2); overflow: hidden; margin-bottom: 12px; }
+    .map-frame iframe { width: 100%; height: 100%; border: none; filter: sepia(30%) hue-rotate(90deg) opacity(0.9); }
 
-    /* Aesthetic Map Frame */
-    .map-frame { width: 100%; height: 140px; border-radius: var(--radius-sm); border: 1px solid var(--line); overflow: hidden; margin-bottom: 12px; }
-    .map-frame iframe { width: 100%; height: 100%; border: none; filter: grayscale(100%) opacity(0.8); transition: filter 0.4s ease; }
-    .map-frame iframe:hover { filter: grayscale(0%) opacity(1); }
-    html[data-theme="dark"] .map-frame iframe { filter: invert(90%) hue-rotate(180deg) grayscale(80%) opacity(0.8); }
-    html[data-theme="dark"] .map-frame iframe:hover { filter: invert(90%) hue-rotate(180deg) grayscale(0%) opacity(1); }
-
-    /* Drawer Reservasi (Modern Sidebar) */
-    .drawer-backdrop { position:fixed; inset:0; background:rgba(15, 23, 42, 0.4); z-index:9998; opacity:0; pointer-events:none; transition:.3s ease; backdrop-filter: blur(4px); }
+    /* Drawer Reservasi */
+    .drawer-backdrop { position:fixed; inset:0; background:rgba(0,0,0, 0.4); z-index:9998; opacity:0; pointer-events:none; transition:.3s ease; backdrop-filter: blur(4px); }
     .drawer-backdrop.show { opacity:1; pointer-events:auto; }
     .res-drawer { 
       position: fixed; top: 0; right: 0; width: min(420px, 100%); height: 100dvh; 
-      background: var(--surface); box-shadow: -10px 0 30px rgba(0,0,0,0.05);
+      background: var(--paper); border-left: 1px solid var(--line);
       z-index: 9999; transform: translateX(100%); transition: .4s cubic-bezier(0.16, 1, 0.3, 1); 
       display: flex; flex-direction: column;
     }
     .res-drawer.show { transform: translateX(0); }
     
-    .drawer-head { padding: 24px 32px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--line); }
-    .drawer-head h3 { font-size: 1.4rem; margin: 0; }
+    .drawer-head { padding: 24px 32px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px dashed var(--line); }
+    .drawer-head h3 { font-size: 1.6rem; margin: 0; }
     .drawer-body { padding: 32px; overflow-y: auto; flex: 1; }
-    .res-image { width: 100%; height: 160px; object-fit: cover; border-radius: var(--radius-sm); margin-bottom: 24px; }
-    .drawer-body h4 { font-size: 1.3rem; margin-bottom: 4px; }
-    .drawer-body > p { color: var(--muted); font-size: 0.95rem; margin-bottom: 32px; font-weight: 500; }
+    .res-image { width: 100%; height: 180px; object-fit: cover; border-radius: var(--radius-arch); margin-bottom: 24px; border: 4px solid var(--surface); }
+    .drawer-body h4 { font-size: 1.5rem; margin-bottom: 4px; }
+    .drawer-body > p { color: var(--muted); font-weight: 600; margin-bottom: 32px; }
     
-    .res-row { display: flex; justify-content: space-between; margin-bottom: 16px; font-size: 1rem; border-bottom: 1px dashed var(--line); padding-bottom: 8px; }
+    .res-row { display: flex; justify-content: space-between; margin-bottom: 16px; font-weight: 600; border-bottom: 1px dashed var(--line); padding-bottom: 8px; }
     .res-row span { color: var(--muted); }
-    .res-row strong { color: var(--ink); }
     
-    .drawer-foot { padding: 24px 32px; background: var(--paper); border-top: 1px solid var(--line); }
+    .drawer-foot { padding: 24px 32px; background: var(--surface); border-top: 1px solid var(--line); }
     .drawer-total { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 20px; }
-    .drawer-total span { color: var(--muted); font-size: 0.95rem; font-weight: 600; }
-    .drawer-total strong { font-size: 1.8rem; font-family: var(--heading); font-weight: 800; color: var(--primary); }
-    .drawer-foot .btn { width: 100%; min-height: 52px; font-size: 1.05rem; border-radius: 50px; }
+    .drawer-total span { color: var(--muted); font-weight: 700; }
+    .drawer-total strong { font-size: 2rem; font-family: var(--heading); color: var(--primary); }
+    .drawer-foot .btn { width: 100%; }
 
-    /* Modals Modern */
-    .modal { position:fixed; inset:0; z-index:10000; display:none; align-items:center; justify-content:center; padding:20px; background:rgba(15, 23, 42, 0.6); backdrop-filter: blur(8px); }
+    /* Modals */
+    .modal { position:fixed; inset:0; z-index:10000; display:none; align-items:center; justify-content:center; padding:20px; background:rgba(0,0,0, 0.6); backdrop-filter: blur(8px); }
     .modal.show { display:flex; }
-    .modal-card { width:min(800px,100%); max-height:90vh; overflow-y:auto; background:var(--surface); border-radius:var(--radius); box-shadow: var(--shadow-float); }
+    .modal-card { width:min(800px,100%); max-height:90vh; overflow-y:auto; background:var(--paper); border-radius:24px; box-shadow: var(--shadow-float); }
     .modal-hero { aspect-ratio:16/9; position:relative; overflow:hidden; }
     .modal-hero img { width:100%; height:100%; object-fit:cover; }
-    .modal-close { position:absolute; right:16px; top:16px; width:40px; height:40px; border-radius:50%; border:none; background:var(--surface); font-size:1.5rem; color: var(--ink); cursor: pointer; transition: .2s; display: grid; place-items: center; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
-    .modal-close:hover { background: var(--soft-bg); transform: scale(1.05); }
-    .modal-content { padding: 40px; }
-    .modal-content h3 { font-size: 2.2rem; margin: 0 0 12px; }
-    .modal-thumbs { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-top: 24px; }
-    .modal-thumbs img { height:120px; object-fit:cover; border-radius:var(--radius-sm); cursor: pointer; transition: .2s; border: 2px solid transparent; }
-    .modal-thumbs img:hover { border-color: var(--primary); }
+    .modal-close { position:absolute; right:16px; top:16px; width:44px; height:44px; border-radius:50%; border:none; background:var(--surface); font-size:1.5rem; color: var(--ink); cursor: pointer; transition: .2s; display: grid; place-items: center; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+    .modal-close:hover { background: var(--primary); color: #fff; transform: rotate(90deg); }
+    .modal-content { padding: 40px; text-align: center; }
+    .modal-content h3 { font-size: 2.5rem; margin: 0 0 12px; }
+    .modal-content p { color: var(--muted); font-size: 1.1rem; line-height: 1.6; max-width: 600px; margin: 0 auto; font-weight: 600;}
+    .modal-thumbs { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-top: 32px; }
+    .modal-thumbs img { height:120px; object-fit:cover; border-radius:var(--radius-sm); cursor: pointer; transition: .2s; opacity: 0.7;}
+    .modal-thumbs img:hover { opacity: 1; transform: translateY(-4px); }
 
-    /* Flatpickr */
-    .flatpickr-calendar { background: var(--surface) !important; border: 1px solid var(--line) !important; box-shadow: var(--shadow-float) !important; border-radius: var(--radius-sm) !important; font-family: var(--sans) !important; padding: 10px !important; }
-    .flatpickr-day { color: var(--ink) !important; border-radius: 50px !important; }
-    .flatpickr-day:hover, .flatpickr-day:focus { background: var(--soft-bg) !important; border-color: transparent !important; }
-    .flatpickr-day.selected { background: var(--primary) !important; color: #FFF !important; border-color: var(--primary) !important; font-weight: 600; }
-    .flatpickr-months .flatpickr-month { color: var(--ink) !important; fill: var(--ink) !important; }
-    .flatpickr-weekday { color: var(--muted) !important; font-weight: 700 !important; }
-    .flatpickr-day.flatpickr-disabled { opacity: 0.3 !important; }
+    /* Flatpickr Tweak */
+    .flatpickr-calendar { background: var(--surface) !important; border: 1px solid var(--line) !important; box-shadow: var(--shadow-float) !important; border-radius: 20px !important; font-family: var(--sans) !important; padding: 10px !important; }
+    .flatpickr-day { color: var(--ink) !important; border-radius: 50px !important; font-weight: 700 !important;}
+    .flatpickr-day.selected { background: var(--primary) !important; color: #FFF !important; border-color: var(--primary) !important; }
+    .flatpickr-months .flatpickr-month { color: var(--ink) !important; fill: var(--ink) !important; font-family: var(--heading) !important; font-size: 1.2rem !important; }
 
     /* Responsive */
-    .mobile-nav-toggle { display: none; background: var(--soft-bg); border: none; width: 44px; height: 44px; border-radius: 50%; font-size: 1.3rem; color: var(--ink); align-items: center; justify-content: center; }
+    .mobile-nav-toggle { display: none; background: transparent; border: none; font-size: 1.8rem; color: var(--ink); }
 
     @media (max-width: 1024px) {
-      .hero-editorial { padding-top: 140px; }
-      .hero-grid, .story-layout { gap: 40px; }
-      .hero-text h1 { font-size: clamp(2.4rem, 5vw, 3.5rem); }
+      .hero-grid, .story-layout { grid-template-columns: 1fr; gap: 60px; }
+      .hero-image { max-width: 80%; margin: 0 auto; }
+      .hero-blob-bg { max-width: 90%; left: 5%; }
+      .polaroid-grid { max-width: 500px; margin: 0 auto; }
       .space-grid { grid-template-columns: repeat(2, 1fr); }
       .gallery-collage { grid-template-columns: repeat(2, 1fr); }
-      .g1, .g2, .g3, .g4 { grid-column: auto; aspect-ratio: auto; }
+      .g1, .g2, .g3, .g4 { grid-column: auto; aspect-ratio: auto; border-radius: var(--radius-sm) !important; }
       .gallery-collage img { height: 240px; }
       .footer-grid { grid-template-columns: 1fr 1fr; }
     }
 
     @media (max-width: 768px) {
-      .container { width: calc(100% - 40px); }
+      header { inset: 10px 0 auto; }
+      .container { width: calc(100% - 32px); }
       
       .nav-links {
-        display: flex; position: absolute; top: 100%; left: 0; width: 100%; flex-direction: column;
-        background: var(--surface); padding: 24px; gap: 24px; border-bottom: 1px solid var(--line);
-        box-shadow: var(--shadow-card); opacity: 0; pointer-events: none; transform: translateY(-10px); transition: 0.3s ease;
+        display: flex; position: absolute; top: 110%; left: 0; width: 100%; flex-direction: column;
+        background: var(--surface); padding: 24px; gap: 24px; border: 1px solid var(--line); border-radius: 20px;
+        box-shadow: var(--shadow-float); opacity: 0; pointer-events: none; transform: translateY(-10px); transition: 0.3s ease;
       }
       .nav-links.active { opacity: 1; pointer-events: auto; transform: translateY(0); }
-      .mobile-nav-toggle { display: flex; }
+      .mobile-nav-toggle { display: block; }
       
-      .hero-editorial { min-height: auto; padding: 120px 0 60px; }
-      .hero-grid { grid-template-columns: 1fr; gap: 40px; }
-      .hero-image-frame { max-width: 100%; }
-      
-      .booking-inline { flex-direction: column; align-items: stretch; gap: 16px; padding: 20px; }
-      .booking-field { border-right: none; border-bottom: 1px solid var(--line); padding-bottom: 16px; padding-right: 0; }
-      
-      .story-layout { grid-template-columns: 1fr; gap: 40px; }
-      .story-quote { border-left: none; border-top: 6px solid var(--primary); padding-left: 0; padding-top: 16px; }
+      .booking-wrapper { flex-direction: column; align-items: stretch; border-radius: 24px; width: 100%; }
+      .booking-field:not(:last-child)::after { display: none; }
+      .booking-field { border-bottom: 1px dashed var(--line); padding-bottom: 16px; margin-bottom: 16px; }
       
       .facilities-list { grid-template-columns: 1fr; }
-      .cta-editorial { padding: 40px 24px; border-radius: 16px; }
+      .cta-homie { padding: 40px 24px; border-radius: 24px; }
       .footer-grid { grid-template-columns: 1fr; gap: 40px; }
     }
 
     @media (max-width: 640px) {
-      section { padding: 60px 0; }
+      .hero { padding: 140px 0 60px; }
+      .hero-text h1 { font-size: 2.8rem; }
+      section { padding: 80px 0; }
       .space-grid { grid-template-columns: 1fr; }
-      .modal-content { padding: 24px; }
-      .modal-thumbs img { height: 80px; }
       .gallery-collage { grid-template-columns: 1fr; gap: 16px; }
       .gallery-collage img { height: 280px; }
     }
@@ -345,38 +376,47 @@
 </head>
 <body>
   <header id="siteHeader">
-    <div class="container nav">
-      <a href="#home" class="brand" aria-label="Arsip Nusa"><i class="ri-home-smile-fill"></i> Arsip Nusa</a>
-      
-      <nav class="nav-links" aria-label="Navigasi utama">
-        <a href="#story">Lingkungan</a>
-        <a href="#spaces">Kamar</a>
-        <a href="#facilities">Fasilitas</a>
-        <a href="#gallery">Galeri</a>
-      </nav>
+    <div class="container">
+      <div class="nav-inner">
+        <a href="#home" class="brand" aria-label="Arsip Nusa">
+          <!-- SVG Rumah Abstrak Custom -->
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+            <polyline points="9 22 9 12 15 12 15 22"></polyline>
+          </svg>
+          Omah Nusa
+        </a>
+        
+        <nav class="nav-links" aria-label="Navigasi utama">
+          <a href="#story">Cerita Kami</a>
+          <a href="#spaces">Kamar</a>
+          <a href="#facilities">Fasilitas</a>
+          <a href="#gallery">Album</a>
+        </nav>
 
-      <div class="nav-actions">
-        <button class="theme-switch" id="themeToggle" aria-label="Ganti tema"><i class="ri-moon-line" id="themeIcon"></i></button>
-        <button class="btn btn-primary" id="openResBtn" style="display:none;">Cek Kamar</button>
-        <button class="mobile-nav-toggle"><i class="ri-menu-line"></i></button>
+        <div class="nav-actions">
+          <button class="theme-switch" id="themeToggle" aria-label="Ganti tema"><i class="ri-moon-clear-line" id="themeIcon"></i></button>
+          <button class="btn btn-primary" id="openResBtn" style="display:none;">Pesan</button>
+          <button class="mobile-nav-toggle"><i class="ri-menu-4-line"></i></button>
+        </div>
       </div>
     </div>
   </header>
 
   <main>
-    <section class="hero-editorial" id="home">
+    <section class="hero" id="home">
       <div class="container">
         <div class="hero-grid">
           <div class="hero-text">
-            <span class="eyebrow">Selamat Datang di Rumah</span>
-            <h1>Nyaman. Hangat. Seperti di rumah sendiri.</h1>
-            <p>Arsip Nusa Guest House menawarkan ruang singgah modern yang bersih, fasilitas lengkap, dan lingkungan yang ramah untuk perjalanan Anda berikutnya.</p>
+            <span class="eyebrow"><i class="ri-seedling-line"></i> Guest House Boutique</span>
+            <h1>Singgah sebentar, <br>kenang selamanya.</h1>
+            <p>Bukan sekadar tempat merebahkan badan. Kami merancang setiap sudutnya agar Anda merasa sedang pulang ke rumah.</p>
             
-            <div class="booking-inline">
+            <div class="booking-wrapper">
               <div class="booking-field">
                 <label>Check-in</label>
                 <div class="booking-input-wrap">
-                  <i class="ri-calendar-line"></i>
+                  <i class="ri-calendar-2-line"></i>
                   <input type="text" id="checkin" placeholder="Pilih Tanggal" readonly>
                 </div>
               </div>
@@ -387,57 +427,75 @@
                   <input type="text" id="checkout" placeholder="Pilih Tanggal" readonly>
                 </div>
               </div>
-              <div class="booking-field" style="border: none;">
+              <div class="booking-field">
                 <label>Kebutuhan</label>
                 <div class="custom-select" id="guestSelect">
                   <div class="select-trigger">
-                    <div class="booking-input-wrap"><i class="ri-door-open-line"></i><span id="guestLabel">1 Kamar</span></div>
-                    <i class="ri-arrow-down-s-line" style="font-size:1.2rem;"></i>
+                    <div class="booking-input-wrap"><i class="ri-key-2-line"></i><span id="guestLabel">1 Kamar</span></div>
+                    <i class="ri-arrow-down-s-line"></i>
                   </div>
                   <div class="select-options" id="guestOptions">
-                    <div data-val="1 Kamar" class="selected">1 Kamar (1-2 Tamu)</div>
-                    <div data-val="2 Kamar">2 Kamar (3-4 Tamu)</div>
-                    <div data-val="3 Kamar">3 Kamar (5-6 Tamu)</div>
+                    <div data-val="1 Kamar" class="selected">1 Kamar (1-2 Org)</div>
+                    <div data-val="2 Kamar">2 Kamar (3-4 Org)</div>
+                    <div data-val="3 Kamar">3 Kamar (5-6 Org)</div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="hero-image-frame">
-            <img src="https://images.unsplash.com/photo-1688653802629-5360086bf632?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?auto=format&fit=crop&w=1200&q=80" alt="Suasana Guesthouse Modern" />
+          
+          <div class="hero-image-wrap">
+            <div class="hero-blob-bg"></div>
+            <img class="hero-image" src="https://images.unsplash.com/photo-1523217582562-09d0def993a6?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?q=80&w=1200&auto=format&fit=crop" alt="Suasana Guesthouse Homey" />
           </div>
         </div>
       </div>
     </section>
 
-    <section id="story">
-      <div class="container">
-        <div class="story-layout">
-          <div>
-            <div class="story-quote">
-              Menginap di tempat yang dirancang untuk kenyamanan istirahat Anda, tanpa menguras kantong.
+    <!-- Transisi Gelombang Organik SVG -->
+    <svg class="wave-divider" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 100" preserveAspectRatio="none">
+      <path d="M0,50 C320,100 420,0 740,50 C1060,100 1200,20 1440,80 L1440,100 L0,100 Z"></path>
+    </svg>
+
+    <div class="bg-surface">
+      <section id="story" style="padding: 20px 0;">
+        <div class="container">
+          <div class="story-layout">
+            <div class="polaroid-grid">
+              <div class="polaroid">
+                <img src="https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?auto=format&fit=crop&w=600" alt="Ruang baca">
+              </div>
+              <div class="polaroid">
+                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600" alt="Tanaman hias">
+              </div>
             </div>
-          </div>
-          <div class="story-content">
-            <span class="eyebrow">Lingkungan Ramah</span>
-            <p>Arsip Nusa Guest House memadukan kepraktisan hotel modern dengan kehangatan rumah singgah. Kami menyediakan ruang komunal yang nyaman untuk bersosialisasi dan kamar tidur yang menjamin privasi istirahat Anda.</p>
-            <p>Berlokasi strategis namun terhindar dari kebisingan jalan raya utama. Sangat cocok bagi Anda yang sedang melakukan perjalanan bisnis, liburan santai, atau sekadar *staycation* di akhir pekan.</p>
             
-            <div class="story-images">
-              <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" alt="Sudut ruang santai">
-              <img src="https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?auto=format&fit=crop&w=800&q=80" alt="Teras depan">
+            <div class="story-content">
+              <span class="eyebrow"><i class="ri-sun-line"></i> Sudut Hangat</span>
+              <h3>Rumah persinggahan yang dirawat sepenuh hati.</h3>
+              <p>Omah Nusa (Arsip Nusa Guest House) memadukan gaya arsitektur *boutique* modern dengan sentuhan kriya lokal. Dinding yang bernapas, cahaya matahari pagi yang masuk melalui celah jendela, dan aroma kopi di pantri bersama.</p>
+              <p>Berlokasi di kawasan asri Jombang, kami menawarkan ketenangan dari hiruk pikuk kota tanpa menjauhkan Anda dari pusat aktivitas. Ruang komunal kami terbuka bagi Anda untuk saling bertukar cerita atau sekadar membaca buku dalam diam.</p>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </div>
+
+    <!-- Transisi Gelombang Kebalikan -->
+    <svg class="wave-divider" style="transform: rotate(180deg);" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 100" preserveAspectRatio="none">
+      <path d="M0,50 C320,100 420,0 740,50 C1060,100 1200,20 1440,80 L1440,100 L0,100 Z"></path>
+    </svg>
 
     <section id="spaces">
       <div class="container">
         <div class="section-head">
-          <span class="eyebrow">Pilihan Kamar & Area</span>
-          <h2>Ruang singgah pilihan Anda.</h2>
+          <span class="eyebrow">Bilik Tidur</span>
+          <h2>
+            Pilih ruang rehat Anda.
+            <div class="squiggle-underline"></div>
+          </h2>
         </div>
+        
         <div class="space-grid" id="spaceGrid"></div>
       </div>
     </section>
@@ -445,36 +503,40 @@
     <section id="facilities">
       <div class="container">
         <div class="section-head">
-          <span class="eyebrow">Kenyamanan Bersama</span>
-          <h2>Fasilitas andalan kami.</h2>
+          <span class="eyebrow">Berbagi Nyaman</span>
+          <h2>
+            Fasilitas ruang bersama.
+            <div class="squiggle-underline"></div>
+          </h2>
         </div>
+        
         <div class="facilities-list">
           <div class="fac-item">
-            <i class="ri-cup-line"></i>
+            <div class="icon-blob"><i class="ri-goblet-line"></i></div>
             <div>
-              <h4>Pantry Bersama</h4>
-              <p>Dapur bersih yang dapat diakses 24 jam. Dilengkapi dispenser, microwave, teh, kopi, dan perlengkapan makan dasar.</p>
+              <h4>Pantri & Meja Makan</h4>
+              <p>Dapur bersih gaya *farmhouse*. Bebas membuat teh, menyeduh kopi lokal gratis, atau menghangatkan makanan kapan saja.</p>
             </div>
           </div>
           <div class="fac-item">
-            <i class="ri-tv-2-line"></i>
+            <div class="icon-blob" style="background: var(--primary);"><i class="ri-sofa-line"></i></div>
             <div>
-              <h4>Lounge & Co-working</h4>
-              <p>Area komunal dengan sofa nyaman, Smart TV, dan meja kerja bagi Anda yang perlu menyelesaikan tugas sambil bersantai.</p>
+              <h4>Ruang Tengah (Lounge)</h4>
+              <p>Area berkumpul dengan sofa empuk, buku-buku bacaan, dan Smart TV. Sempurna untuk bersantai sore hari.</p>
             </div>
           </div>
           <div class="fac-item">
-            <i class="ri-wifi-line"></i>
+            <div class="icon-blob"><i class="ri-leaf-line"></i></div>
             <div>
-              <h4>Wi-Fi Cepat Gratis</h4>
-              <p>Koneksi internet tanpa batas di seluruh area *guest house*, memastikan Anda tetap terhubung untuk kerja maupun hiburan.</p>
+              <h4>Teras Belakang Asri</h4>
+              <p>Taman kecil di area belakang yang dikelilingi tanaman hias. Area khusus bagi Anda yang ingin mencari inspirasi di alam terbuka.</p>
             </div>
           </div>
           <div class="fac-item">
-            <i class="ri-shirt-line"></i>
+            <div class="icon-blob" style="background: var(--primary);"><i class="ri-wifi-line"></i></div>
             <div>
-              <h4>Layanan Laundry</h4>
-              <p>Fasilitas *laundry* kiloan harian (berbayar) dan alat setrika yang bisa dipinjam untuk kemudahan pakaian Anda.</p>
+              <h4>Koneksi Internet Cepat</h4>
+              <p>Wi-Fi stabil di seluruh area rumah. Mendukung kebutuhan *remote working* (WFA) atau hiburan *streaming* Anda.</p>
             </div>
           </div>
         </div>
@@ -484,50 +546,64 @@
     <section id="gallery">
       <div class="container">
         <div class="section-head">
-          <span class="eyebrow">Jurnal Visual</span>
-          <h2>Intip suasana aslinya.</h2>
+          <span class="eyebrow">Buku Memori</span>
+          <h2>
+            Album visual kami.
+            <div class="squiggle-underline"></div>
+          </h2>
         </div>
         <div class="gallery-collage">
-          <img class="g1" src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=1200&q=80" alt="Nuansa kolam">
-          <img class="g2" src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1200&q=80" alt="Kamar mandi bersih">
-          <img class="g3" src="https://images.unsplash.com/photo-1590490359683-658d3d23f972?auto=format&fit=crop&w=800&q=80" alt="Kamar tidur">
-          <img class="g4" src="https://images.unsplash.com/photo-1600489000022-c2086d79f9d4?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?auto=format&fit=crop&w=800&q=80" alt="Dapur estetik">
+          <img class="g1" src="https://images.unsplash.com/photo-1554995207-c18c203602cb?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?auto=format&fit=crop&w=1200" alt="Suasana hangat">
+          <img class="g2" src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1200" alt="Kamar mandi bersih">
+          <img class="g3" src="https://images.unsplash.com/photo-1590490359683-658d3d23f972?auto=format&fit=crop&w=800" alt="Kamar tidur ranjang kayu">
+          <img class="g4" src="https://images.unsplash.com/photo-1600489000022-c2086d79f9d4?auto=format&fit=crop&w=800" alt="Dapur estetik">
         </div>
       </div>
     </section>
 
     <section>
       <div class="container">
-        <div class="cta-editorial">
-          <span class="eyebrow">Ayo Menginap</span>
-          <h2>Kamar nyaman Anda sudah menanti.</h2>
-          <p>Dapatkan harga terbaik dengan melakukan reservasi secara langsung. Proses cepat, mudah, dan tanpa biaya tambahan.</p>
-          <button class="btn btn-primary" onclick="openReservation()">Lihat Ketersediaan & Pesan</button>
+        <div class="cta-homie">
+          <div class="cta-content">
+            <span class="eyebrow"><i class="ri-door-open-line"></i> Mari Berkunjung</span>
+            <h2>Sudah siap untuk menginap?</h2>
+            <p>Amankan kamar Anda sekarang melalui pesan WhatsApp secara langsung. Kami siap menyambut kedatangan Anda di Omah Nusa.</p>
+            <button class="btn btn-primary" onclick="openReservation()">Cek Tanggal & Pesan</button>
+          </div>
         </div>
       </div>
     </section>
   </main>
 
+  <!-- SVG Gelombang Footer -->
   <footer>
+    <svg class="footer-wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 120" preserveAspectRatio="none" style="height: 60px;">
+      <path d="M0,60 C320,120 420,0 740,60 C1060,120 1200,20 1440,80 L1440,120 L0,120 Z"></path>
+    </svg>
     <div class="container footer-grid">
       <div>
-        <a href="#home" class="brand" style="margin-bottom: 16px; display: inline-flex;"><i class="ri-home-smile-fill"></i> Arsip Nusa</a>
-        <p style="max-width: 280px; margin-top: 12px;">Ruang singgah ramah dan nyaman untuk istirahat optimal Anda. Bersih, aman, dan strategis.</p>
+        <a href="#home" class="brand" style="margin-bottom: 16px; display: inline-flex; color:#FFF;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline>
+          </svg> 
+          &nbsp;Omah Nusa
+        </a>
+        <p style="max-width: 280px; margin-top: 12px;">Ruang singgah berkarakter yang dirancang khusus untuk kenyamanan dan ketenangan istirahat Anda.</p>
       </div>
       <div>
-        <h5>Navigasi</h5>
-        <p><a href="#story">Tentang Kami</a></p>
-        <p><a href="#spaces">Tipe Kamar</a></p>
-        <p><a href="#gallery">Galeri</a></p>
+        <h5>Peta Situs</h5>
+        <p><a href="#story">Cerita Kami</a></p>
+        <p><a href="#spaces">Pilihan Kamar</a></p>
+        <p><a href="#gallery">Album Visual</a></p>
       </div>
       <div>
-        <h5>Bantuan & Kontak</h5>
-        <p>Email: halo@arsipnusa.com</p>
+        <h5>Sapa Kami</h5>
+        <p>Email: sapa@omahnusa.com</p>
         <p>WhatsApp: +62 821 5485 3554</p>
-        <p style="margin-top: 24px; font-size: 0.85rem; opacity: 0.6;">© 2026 Arsip Nusa Guest House.</p>
+        <p style="margin-top: 24px; font-size: 0.85rem; opacity: 0.6; font-family:var(--sans);">© 2026 Arsip Nusa Group.</p>
       </div>
       <div>
-        <h5>Lokasi Kami</h5>
+        <h5>Titik Lokasi</h5>
         <div class="map-frame">
           <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126438.2854809817!2d115.08816093554686!3d-8.4095178!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd22f7520fca7d3%3A0x2872b62cc456cd84!2sUbud%2C%20Kabupaten%20Gianyar%2C%20Bali!5e0!3m2!1sid!2sid!4v1700000000000!5m2!1sid!2sid" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
@@ -538,18 +614,18 @@
     </div>
   </footer>
 
-  <!-- Drawer Reservasi -->
+  <!-- Drawer Reservasi (Estetik) -->
   <div class="drawer-backdrop" id="resBackdrop"></div>
   <aside class="res-drawer" id="resDrawer" aria-label="Ringkasan Reservasi">
     <div class="drawer-head">
-      <h3>Detail Pemesanan</h3>
+      <h3>Nota Pesanan</h3>
       <button class="icon-btn" style="border:none; background:transparent" id="closeRes"><i class="ri-close-line"></i></button>
     </div>
     
     <div class="drawer-body">
-      <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=800&q=80" alt="Kamar Guesthouse" class="res-image">
-      <h4>Arsip Nusa Guest House</h4>
-      <p>Sewa kamar harian yang bersih & nyaman.</p>
+      <img src="https://images.unsplash.com/photo-1590490359683-658d3d23f972?auto=format&fit=crop&w=800" alt="Kamar Guesthouse" class="res-image">
+      <h4>Omah Nusa Guest House</h4>
+      <p>Sewa kamar harian yang artistik & hangat.</p>
       
       <div id="resCalcArea" style="margin-top: 32px;">
         <!-- Diisi oleh JS -->
@@ -558,10 +634,10 @@
     
     <div class="drawer-foot">
       <div class="drawer-total">
-        <span>Estimasi Biaya</span>
+        <span>Biaya Rehat</span>
         <strong id="resTotal">Rp 0</strong>
       </div>
-      <button class="btn btn-primary" id="waCheckout">Pesan via WhatsApp <i class="ri-whatsapp-line" style="margin-left: 6px; font-size:1.2rem;"></i></button>
+      <button class="btn btn-primary" id="waCheckout">Hubungi via WhatsApp <i class="ri-whatsapp-line" style="margin-left: 6px; font-size:1.2rem;"></i></button>
     </div>
   </aside>
 
@@ -573,9 +649,9 @@
         <button class="modal-close" id="modalClose"><i class="ri-close-line"></i></button>
       </div>
       <div class="modal-content">
-        <span class="eyebrow">Info Ruangan</span>
+        <span class="eyebrow">Mengintip Ruang</span>
         <h3 id="modalTitle"></h3>
-        <p id="modalDesc" style="color:var(--muted); font-size: 1.05rem; line-height: 1.6; max-width: 700px;"></p>
+        <p id="modalDesc"></p>
         <div class="modal-thumbs" id="modalThumbs"></div>
       </div>
     </div>
@@ -585,23 +661,23 @@
 
   <script>
     const WHATSAPP_NUMBER = '6282154853554';
-    const ROOM_PRICE_PER_NIGHT = 350000; // Harga kamar per malam untuk Guesthouse
+    const ROOM_PRICE_PER_NIGHT = 280000; // Harga Boutique Guesthouse
 
     const spaces = [
       {
-        id:'superior', name:'Kamar Superior', meta: 'Queen Bed • AC • En-Suite',
-        desc:'Kamar standar yang nyaman dan bersih. Dilengkapi dengan kasur ukuran Queen yang empuk, AC dingin, TV dinding, dan kamar mandi dalam bershower air hangat.',
-        images:['https://images.unsplash.com/photo-1590490359683-658d3d23f972?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=900&q=80']
+        id:'superior', name:'Kamar Pagi', meta: 'Queen Bed • Cahaya Alami',
+        desc:'Diberi nama Kamar Pagi karena posisinya yang mendapat limpahan matahari terbit. Dilengkapi dipan kayu solid, kasur Queen yang super empuk, dan kamar mandi dalam bershower air hangat.',
+        images:['https://images.unsplash.com/photo-1590490359683-658d3d23f972?auto=format&fit=crop&w=1200', 'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=900']
       },
       {
-        id:'deluxe', name:'Kamar Deluxe', meta: 'King Bed • Balkon • AC',
-        desc:'Tipe kamar yang lebih luas dengan jendela menghadap taman. Tersedia kasur King size, area duduk kecil, meja kerja minimalis, dan kamar mandi dalam modern.',
-        images:['https://images.unsplash.com/photo-1560448204-603b3fc33ddc?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=900&q=80']
+        id:'deluxe', name:'Kamar Teduh', meta: 'King Bed • Balkon Hijau',
+        desc:'Bilik yang lebih luas dengan sentuhan warna hijau sage. Terdapat jendela melengkung besar yang mengarah langsung ke taman belakang, cocok untuk Anda yang suka membaca dalam sunyi.',
+        images:['https://images.unsplash.com/photo-1560448204-603b3fc33ddc?auto=format&fit=crop&w=1200', 'https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=900']
       },
       {
-        id:'lounge', name:'Ruang Tengah', meta: 'Area Bersama • Smart TV',
-        desc:'Jantung dari guest house ini. Sofa nyaman untuk berkumpul sesama tamu, membaca buku, atau sekadar menonton saluran TV kabel bersama di malam hari.',
-        images:['https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?auto=format&fit=crop&w=1200&q=80', 'https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=900&q=80']
+        id:'twin', name:'Kamar Kawan', meta: '2 Single Bed • Area Tulis',
+        desc:'Kamar yang ideal untuk Anda yang bepergian bersama teman. Terdapat dua ranjang terpisah, dekorasi dinding macrame buatan pengrajin lokal, dan meja kecil untuk menulis jurnal perjalanan.',
+        images:['https://images.unsplash.com/photo-1598928636135-d146006ff4be?auto=format&fit=crop&w=1200', 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=900']
       }
     ];
 
@@ -609,14 +685,13 @@
 
     const spaceGrid = document.getElementById('spaceGrid');
     spaceGrid.innerHTML = spaces.map(sp => `
-      <div class="space-item" onclick="openSpace('${sp.id}')">
+      <div class="space-card" onclick="openSpace('${sp.id}')">
         <div class="space-img-wrap">
           <img src="${sp.images[0]}" alt="${sp.name}">
         </div>
-        <h3>${sp.name}</h3>
         <div class="space-meta"><span>${sp.meta}</span></div>
-        <p>${sp.desc.substring(0, 80)}...</p>
-        <span class="read-more">Lihat Detail <i class="ri-arrow-right-line"></i></span>
+        <h3>${sp.name}</h3>
+        <p>${sp.desc.substring(0, 70)}...</p>
       </div>`).join('');
 
     function openSpace(id){
@@ -631,6 +706,7 @@
     document.getElementById('modalClose').onclick = () => document.getElementById('spaceModal').classList.remove('show');
     document.getElementById('spaceModal').addEventListener('click', e => { if(e.target.id==='spaceModal') e.currentTarget.classList.remove('show'); });
 
+    // Flatpickr
     const today = new Date();
     const tomorrow = new Date(today); tomorrow.setDate(today.getDate()+1);
     
@@ -669,11 +745,11 @@
       }
     });
 
+    // Custom Dropdown
     const guestSelect = document.getElementById('guestSelect');
     const guestLabel = document.getElementById('guestLabel');
     const guestOptions = document.getElementById('guestOptions');
     
-    // Ubah logic agar ambil angka kamar
     let selectedRoomCount = 1; 
     let selectedRoomText = "1 Kamar";
 
@@ -686,39 +762,33 @@
       option.addEventListener('click', function() {
         guestOptions.querySelector('.selected').classList.remove('selected');
         this.classList.add('selected');
-        
         selectedRoomText = this.getAttribute('data-val');
         selectedRoomCount = parseInt(selectedRoomText.split(" ")[0]); 
         guestLabel.textContent = selectedRoomText;
-        
         updateReservationSummary();
       });
     });
 
-    document.addEventListener('click', function() {
-      guestSelect.classList.remove('open');
-    });
+    document.addEventListener('click', function() { guestSelect.classList.remove('open'); });
 
+    // Drawer Logic
     const resDrawer = document.getElementById('resDrawer');
     const resBackdrop = document.getElementById('resBackdrop');
     
     function openReservation(){ 
       updateReservationSummary();
-      document.getElementById('siteHeader').style.transform = 'translateY(-100%)'; // Sembunyikan navbar saat drawer buka
       resDrawer.classList.add('show'); 
       resBackdrop.classList.add('show'); 
     }
     function closeReservation(){ 
       resDrawer.classList.remove('show'); 
       resBackdrop.classList.remove('show'); 
-      setTimeout(() => document.getElementById('siteHeader').style.transform = 'translateY(0)', 300);
     }
     
     document.getElementById('openResBtn').onclick = openReservation;
     document.getElementById('closeRes').onclick = closeReservation;
     resBackdrop.onclick = closeReservation;
 
-    // Untuk membuka dari form di hero langsung
     const heroInputs = [document.getElementById('checkin'), document.getElementById('checkout')];
     heroInputs.forEach(el => el.addEventListener('click', () => {
        document.getElementById('openResBtn').style.display = 'inline-flex';
@@ -735,32 +805,31 @@
       const outVal = document.getElementById('checkout').value;
       
       if(checkinDate && checkoutDate) {
-        document.getElementById('openResBtn').style.display = 'inline-flex'; // Munculkan tombol pesan
+        document.getElementById('openResBtn').style.display = 'inline-flex'; 
         const diffTime = Math.abs(checkoutDate - checkinDate);
         calculatedNights = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-        
-        // Harga total = Malam x Harga Kamar x Jumlah Kamar
         calculatedTotal = calculatedNights * ROOM_PRICE_PER_NIGHT * selectedRoomCount;
         
         calcArea.innerHTML = `
-          <div class="res-row"><span>Check-in</span><strong>${inVal}</strong></div>
-          <div class="res-row"><span>Check-out</span><strong>${outVal}</strong></div>
-          <div class="res-row"><span>Jumlah Kamar</span><strong>${selectedRoomText}</strong></div>
-          <div class="res-row" style="border:none; margin-top:20px;"><span>Durasi</span><strong>${calculatedNights} Malam</strong></div>
+          <div class="res-row"><span>Kedatangan</span><strong>${inVal}</strong></div>
+          <div class="res-row"><span>Kepulangan</span><strong>${outVal}</strong></div>
+          <div class="res-row"><span>Bilik Dipesan</span><strong>${selectedRoomText}</strong></div>
+          <div class="res-row" style="border:none; margin-top:20px;"><span>Lama Menginap</span><strong>${calculatedNights} Malam</strong></div>
         `;
         totalDisplay.textContent = rupiah(calculatedTotal);
       } else {
         calculatedNights = 0;
         calculatedTotal = 0;
         calcArea.innerHTML = `
-          <div style="text-align:center; color:var(--muted); padding: 20px 0; font-size:1rem; border: 1px dashed var(--line); border-radius: var(--radius-sm);">
-            Pilih tanggal <strong>Check-in</strong> dan <strong>Check-out</strong> untuk melihat rincian harga.
+          <div style="text-align:center; color:var(--muted); padding: 20px 0; font-size:1rem; border: 1px dashed var(--line); border-radius: var(--radius-sm); font-family: var(--sans); font-weight:600;">
+            Pilih tanggal di halaman utama untuk melihat nota rehat Anda.
           </div>
         `;
         totalDisplay.textContent = "Rp 0";
       }
     }
 
+    // WA Button
     document.getElementById('waCheckout').onclick = () => {
       const checkin = document.getElementById('checkin').value;
       const checkout = document.getElementById('checkout').value;
@@ -770,11 +839,12 @@
         return;
       }
       
-      const message = `Halo Arsip Nusa Guest House!\n\nSaya ingin memesan kamar dengan rincian berikut:\n\nCheck-in: ${checkin}\nCheck-out: ${checkout}\nDurasi: ${calculatedNights} Malam\nPesanan: ${selectedRoomText}\n\nEstimasi Biaya: ${rupiah(calculatedTotal)}\n\nMohon informasi ketersediaan kamar dan cara pembayarannya ya. Terima kasih!`;
+      const message = `Halo Omah Nusa! (Arsip Nusa GH)\n\nSaya ingin singgah dan merebahkan badan dengan rincian nota berikut:\n\nKedatangan: ${checkin}\nKepulangan: ${checkout}\nLama Singgah: ${calculatedNights} Malam\nBilik: ${selectedRoomText}\n\nEstimasi Biaya: ${rupiah(calculatedTotal)}\n\nApakah kamarnya tersedia untuk tanggal tersebut? Terima kasih!`;
       
       window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`, '_blank');
     };
 
+    // Mobile Nav
     const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
     const navLinks = document.querySelector('.nav-links');
 
@@ -782,11 +852,11 @@
       navLinks.classList.toggle('active');
       const icon = mobileNavToggle.querySelector('i');
       if(navLinks.classList.contains('active')) {
-        icon.classList.remove('ri-menu-line');
+        icon.classList.remove('ri-menu-4-line');
         icon.classList.add('ri-close-line');
       } else {
         icon.classList.remove('ri-close-line');
-        icon.classList.add('ri-menu-line');
+        icon.classList.add('ri-menu-4-line');
       }
     });
 
@@ -795,27 +865,25 @@
         navLinks.classList.remove('active');
         const icon = mobileNavToggle.querySelector('i');
         icon.classList.remove('ri-close-line');
-        icon.classList.add('ri-menu-line');
+        icon.classList.add('ri-menu-4-line');
       });
     });
 
+    // Theme Toggle
     const themeToggle = document.getElementById('themeToggle');
     const themeIcon = document.getElementById('themeIcon');
-    const savedTheme = localStorage.getItem('arsipNusaGHTheme') || 'light'; // bedakan key localstorage
+    const savedTheme = localStorage.getItem('omahNusaTheme') || 'light'; 
     
     document.documentElement.dataset.theme = savedTheme;
-    themeIcon.className = savedTheme === 'dark' ? 'ri-sun-line' : 'ri-moon-line';
+    themeIcon.className = savedTheme === 'dark' ? 'ri-sun-line' : 'ri-moon-clear-line';
     
     themeToggle.onclick = () => {
       const next = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
       document.documentElement.dataset.theme = next;
-      localStorage.setItem('arsipNusaGHTheme', next);
-      themeIcon.className = next === 'dark' ? 'ri-sun-line' : 'ri-moon-line';
+      localStorage.setItem('omahNusaTheme', next);
+      themeIcon.className = next === 'dark' ? 'ri-sun-line' : 'ri-moon-clear-line';
     };
 
-    const header = document.getElementById('siteHeader');
-    addEventListener('scroll', () => header.classList.toggle('scrolled', scrollY > 50));
-    
     updateReservationSummary();
   </script>
 </body>
